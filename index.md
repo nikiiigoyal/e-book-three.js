@@ -6,6 +6,11 @@ DOc: **https://threejs.org/manual/**
 
 ## Notes
 
+#Installation
+
+every three.js project needs at least **one HTML file to define the webpage, and a JavaScript file to run your three.js code**
+
+
 **WebGl** : js Api for rendering 3d graphics in web browser using GPU.
 **GPU** : special type of hardware that can run simple calculations in parallel.
 **3.js?** :- Three.js is a JavaScript library that uses WebGL to render 3D graphics in a web browser.
@@ -13,6 +18,15 @@ DOc: **https://threejs.org/manual/**
 *Scene, Camera, and Renderer:*
 **Scene**: The container where everything lives (models, lights, cameras).
 **Renderer**: The engine that calculates and draws the final image onto the screen using WebGL.
+
+renderer instance 
+setsize
+It's a good idea to use the width and height of the area we want to fill with our app - renderer.setSize( window.innerWidth, window.innerHeight );
+append Dom
+
+
+
+
 **Camera**: Your viewport into the 3D world (what the user sees).
 That's a great next step! Understanding the two main camera types is absolutely key to making your scene look right.
 The two main camera types in Three.js are:
