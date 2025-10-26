@@ -34,7 +34,7 @@ PerspectiveCamera 🌎 - (fov,aspectratio,near,far)
 OrthographicCamera 📐 - (left,right,top,bottom,near,far)
 **The PerspectiveCamera** : It works just like your eye or a real camera: objects look smaller the further away they are. It gives your scene depth and realism.
 
-**FOv** - vertical angle of your viewing cone. (How wide the view is.)	
+**FOv** - vertical angle of your viewing cone. (How wide the view is)	
 (Set between 50 and 75). A smaller number "zooms in" (telephoto); a larger number "zooms out" (wide-angle).
 **Aspect Ratio** - The shape of your screen. 
 Must be calculated as window.innerWidth / window.innerHeight to match your canvas.
