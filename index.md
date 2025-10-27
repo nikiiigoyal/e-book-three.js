@@ -3,10 +3,9 @@
 VIDEO: **"https://www.youtube.com/watch?v=KM64t3pA4fs&t=1s*"**
 DOc: **https://threejs.org/manual/**
 
-
 ## Notes
 
-#Installation
+### Installation
 
 every three.js project needs at least **one HTML file to define the webpage, and a JavaScript file to run your three.js code**
 
