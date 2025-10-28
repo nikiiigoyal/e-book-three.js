@@ -2,19 +2,31 @@
 
 VIDEO: **"https://www.youtube.com/watch?v=KM64t3pA4fs&t=1s*"**
 DOc: **https://threejs.org/manual/**
-
+img: 
+![alt text](https://threejs.org/manual/resources/images/threejs-structure.svg)
 ## Notes
 
 ### Installation
 
-every three.js project needs at least **one HTML file to define the webpage, and a JavaScript file to run your three.js code**
+Every three.js project needs at least **one HTML file to define the webpage, and a JavaScript file to run your three.js code**
+
+_<script type="module">
+import * as THREE from 'three';
+</script>_ : this enables us to use the import keyword to load three.js.
+
+_<canvas id="c"></canvas>_  : 
+const canvas = document.querySelector('#c');
+  const renderer = new THREE.WebGLRenderer({antialias: true, canvas})
+
 
 
 **WebGl** : js Api for rendering 3d graphics in web browser using GPU.
+very low-level system that only draws points,lines and triangle
 **GPU** : special type of hardware that can run simple calculations in parallel.
 **3.js?** :- Three.js is a JavaScript library that uses WebGL to render 3D graphics in a web browser.
 **Components of 3.js**
 *Scene, Camera, and Renderer:*
+
 **Scene**: The container where everything lives (models, lights, cameras).
 **Renderer**: The engine that calculates and draws the final image onto the screen using WebGL.
 
@@ -28,6 +40,11 @@ append Dom
 
 **Camera**: Your viewport into the 3D world (what the user sees).
 That's a great next step! Understanding the two main camera types is absolutely key to making your scene look right.
+
+X-axis (Red): Horizontal (Left/Right)
+Y-axis (Green): Vertical (Up/Down)
+Z-axis (Blue): Depth (Forward/Backward)
+
 The two main camera types in Three.js are:
 PerspectiveCamera 🌎 - (fov,aspectratio,near,far)
 OrthographicCamera 📐 - (left,right,top,bottom,near,far)
@@ -41,7 +58,7 @@ Must be calculated as window.innerWidth / window.innerHeight to match your canva
 **Far** - The farthest an object can be before it vanishes.	Set a large number like 1000. 
 **The OrthographicCamera** : is used for technical drawings, 2D games, or UI elements. It treats every object as if it's the same distance away, so a cube far away looks the exact same size as the same cube up close.
 
-
+**Mesh** : reprsent drawing specific _geometry_ with specific _material_ .
 
 **OrbitControls** 
 The OrbitControls is a utility that allows the user (you) to interactively move the camera around a central point in the scene using a mouse or touch input. It handles all the complex math for rotation, panning, and zooming so you don't have to write it yourself.
@@ -54,6 +71,7 @@ controls.update() = Calculates new positions.	Must be called in the render loop 
 
 **RenderLoop**
 the Render Loop is the continuous function that runs to update your scene 60 times per second
+
 *window.requestAnimationFrame(renderLoop)*	- The function call that powers the loop.	Asks the browser to call renderLoop again before the next screen refresh. This is efficient and keeps the frame rate smooth.
 *renderer.render(scene, camera)*
 
