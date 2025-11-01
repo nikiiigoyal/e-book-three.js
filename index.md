@@ -153,3 +153,26 @@ Highly realistic shading.
 
 **MeshPhysicalMaterial**	
  Paint An advanced extension of StandardMaterial. Used for complex surfaces like clear coats, glass, transparency, and advanced refractions.
+
+
+**Types of Lights**
+
+**RectAreaLight**
+**THREE.RectAreaLightNode.setLTC( RectAreaLightTexturesLib.init() )** 
+is an initialization step required specifically when using RectAreaLight with the newer WebGPU Renderer.
+RectAreaLight simulates _light accurately_, including how light gets softer as it hits different parts of a surface. This calculation is complex.
+
+Efficiency: Instead of doing the complex math in real-time for every single frame (which would be very slow), three.js uses the LTC technique. This technique pre-calculates the heavy-duty math and stores the results in small textures (your "cheat sheet").
+
+The Fix: The line you asked about simply tells the WebGPU renderer: "Before you start drawing anything, please load this special LTC (Linearly Transformed Cosines.	A complex mathematical technique.)data using RectAreaLightTexturesLib.init() and register it using setLTC() so you know how to draw light properly."
+
+Important Notes:
+
+There is no shadow support.
+Only PBR materials are supported.
+You have to include RectAreaLightUniformsLib (WebGLRenderer) or RectAreaLightTexturesLib (WebGPURenderer) into your app and init the uniforms/textures.
+**RectAreaLightUniformsLib.init();** //only relevant for WebGLRenderer
+**THREE.RectAreaLightNode.setLTC( RectAreaLightTexturesLib.init() );** //only relevant for WebGPURenderer
+
+**const rectLight = new THREE.RectAreaLight( 0xffffff, intensity, width, height )**
+
