@@ -12,5 +12,5 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate)
 **function animate**() {
   renderer.render(scene,camera)
-}_
+}
 
