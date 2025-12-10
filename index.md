@@ -121,14 +121,7 @@ A folder or container.
 *THREE.Group.*
 A Group is an invisible container that holds multiple meshes. If you transform (position, rotate, or scale) the Group, all the meshes inside it move together. This is essential for building complex objects (like a car made of separate wheels and a body).
 
-**Geometry**
-**Buffer Geometry & Primitives**
-The raw clay (Buffer Geometry) and the pre-made shapes (Primitives).
 
-**BufferGeometr**y is the underlying, high-performance way to store a mesh's shape (its vertices, faces, and normals). 
-**Primitives** (like BoxGeometry, SphereGeometry, CylinderGeometry) are simply pre-packaged, ready-to-use forms of BufferGeometry.
-
-***If Geometry is the object's shape, the Material is its surface properties, and the Texture is the image painted on it.***
 
 **Materials**
 Defines how the surface reacts to light (is it shiny, matte, rough, or does it ignore light?).
